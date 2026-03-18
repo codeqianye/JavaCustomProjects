@@ -1,0 +1,16 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: member-service-consumer
+#eureka 客户端配置
+eureka:
+  client:
+    #将自己注册到 EurekaServer, 也可以设置 false, 不注册
+    register-with-eureka: true
+    #配置从 EurekaServer 抓取其它服务注册信息
+    fetchRegistry: true
+    service-url:
+      #表示关联哪个 eurekaServer(注册/拉取服务信息)
+      defaultZone: http://eureka9001.com:9001/eureka,http://eureka9002.com:9002/eureka
