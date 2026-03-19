@@ -11,8 +11,9 @@ import javax.annotation.Resource;
 @RestController
 @Slf4j
 public class MemberConsumerController {
-    public static final String
-            MEMBER_SERVICE_PROVIDER_URL = "http://localhost:10000";
+    //public static final String MEMBER_SERVICE_PROVIDER_URL = "http://localhost:10000";
+    public static final String MEMBER_SERVICE_PROVIDER_URL =  "http://MEMBER-SERVICE-PROVIDER";
+
     @Resource
     private RestTemplate restTemplate;
 
