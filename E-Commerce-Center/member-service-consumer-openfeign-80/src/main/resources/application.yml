@@ -1,0 +1,29 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: member-service-consumer-openfeign
+#eureka 客户端配置
+eureka:
+  client:
+    #将自己注册到 EurekaServer, 也可以设置 false, 不注册
+    register-with-eureka: true
+    #配置从 EurekaServer 抓取其它服务注册信息
+    fetchRegistry: true
+    service-url:
+      #表示关联哪个 eurekaServer(注册/拉取服务信息)
+      defaultZone: http://eureka9001.com:9001/eureka,http://eureka9002.com:9002/eureka
+
+#ribbon:
+  #设置 feign 客户端超时时间（openFeign 默认支持 ribbon)
+  #指的是建立连接后从服务器读取到可用资源所用的时间，
+  #时间单位是毫秒
+  #ReadTimeout: 8000
+  #指的是建立连接所用的时间，适用于网络状况正常的情况下，
+  #两端连接所用的时间
+  #ConnectTimeout: 8000
+
+logging:
+  level:
+    com.feng: DEBUG   # 你的业务包改成自己的
