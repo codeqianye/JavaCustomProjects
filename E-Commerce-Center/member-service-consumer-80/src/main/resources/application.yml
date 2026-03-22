@@ -14,3 +14,7 @@ eureka:
     service-url:
       #表示关联哪个 eurekaServer(注册/拉取服务信息)
       defaultZone: http://eureka9001.com:9001/eureka,http://eureka9002.com:9002/eureka
+
+logging:
+  level:
+    com.feng: DEBUG   # 你的业务包改成自己的
