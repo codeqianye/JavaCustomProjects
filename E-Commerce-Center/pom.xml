@@ -8,7 +8,7 @@
     <!-- 表明是一个父工程,聚合管理其他模块 -->
     <packaging>pom</packaging>
 
-    <name>Maven</name>
+    <name>e-commerce-center</name>
     <!-- FIXME change it to the project's website -->
     <url>http://maven.apache.org/</url>
     <inceptionYear>2001</inceptionYear>
@@ -21,6 +21,10 @@
         <module>member-service-provider-10002</module>
         <module>member-service-consumer-openfeign-80</module>
         <module>e-commerce-gateway-20000</module>
+        <module>member-service-nacos-provider-10004</module>
+        <module>member-service-nacos-provider-10006</module>
+        <module>member-service-nacos-consumer-80</module>
+        <module>e-commerce-nacos-config-client5000</module>
     </modules>
 
     <!-- 统一配置各个依赖版本 -->
