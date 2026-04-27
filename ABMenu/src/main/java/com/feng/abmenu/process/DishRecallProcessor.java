@@ -2,7 +2,7 @@ package com.feng.abmenu.process;
 
 import com.feng.abmenu.builder.DishQueryBuilder;
 import com.feng.abmenu.builder.DishQueryBuilderFactory;
-import com.feng.abmenu.common.SearchContext;
+import com.feng.abmenu.pojo.SearchContext;
 import com.feng.abmenu.esquery.DishRepository;
 import com.feng.abmenu.pojo.Dish;
 import lombok.extern.slf4j.Slf4j;
@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 @Component
-public class DishRecallProcessor extends AbstractDishProcessor{
+public class DishRecallProcessor extends AbstractDishRecallProcessor {
     private final DishQueryBuilderFactory queryBuilderFactory;
     private final DishRepository dishRepository;
 

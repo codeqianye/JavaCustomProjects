@@ -1,6 +1,5 @@
-package com.feng.abmenu.common;
+package com.feng.abmenu.pojo;
 
-import com.feng.abmenu.pojo.Dish;
 import lombok.Data;
 
 import java.util.ArrayList;

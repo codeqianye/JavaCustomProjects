@@ -1,6 +1,6 @@
 package com.feng.abmenu.process;
 
-import com.feng.abmenu.common.SearchContext;
+import com.feng.abmenu.pojo.SearchContext;
 import com.feng.abmenu.pojo.Dish;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -41,16 +41,5 @@ public class DishSortProcessor extends AbstractDishProcessor {
         List<Dish> sorted = new ArrayList<>(deduped.values());
         ctx.setFinalResult(sorted);
         log.info("最终结果：{}条（去重后）", sorted.size());
-    }
-
-    // 以下两个方法是抽象方法，必须实现，但 process() 已经 override 了，这里不会被调用
-    @Override
-    protected String buildQuery(SearchContext ctx, Map<String, String> params) {
-        return "sort";
-    }
-
-    @Override
-    protected List<Dish> execute(SearchContext ctx, String query, Map<String, String> params) {
-        return new ArrayList<>();
     }
 }

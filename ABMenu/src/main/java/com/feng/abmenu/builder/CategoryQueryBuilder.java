@@ -1,6 +1,6 @@
 package com.feng.abmenu.builder;
 
-import com.feng.abmenu.common.SearchContext;
+import com.feng.abmenu.pojo.SearchContext;
 import org.springframework.stereotype.Component;
 
 import java.util.Map;
