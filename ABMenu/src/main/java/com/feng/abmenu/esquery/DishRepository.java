@@ -48,4 +48,10 @@ public class DishRepository {
                 .filter(d -> d.getName().contains(keyword) || d.getTags().contains(keyword))
                 .collect(Collectors.toList());
     }
+
+    public List<Dish> findByPriceRange(double minPrice, double maxPrice) {
+        return ALL_DISHES.stream()
+                .filter(d -> d.getPrice() >= minPrice && d.getPrice() <= maxPrice)
+                .collect(Collectors.toList());
+    }
 }

@@ -68,6 +68,10 @@ public class DishRecallProcessor extends AbstractDishRecallProcessor {
             case "byCategory":
                 result = dishRepository.findByCategory(query);
                 break;
+            case "byPriceRange":
+                String[] split = query.split("-");
+                result = dishRepository.findByPriceRange(Double.parseDouble(split[0]),Double.parseDouble(split[1]));
+                break;
             default:
                 log.warn("未知的 queryBuilder: {}, params: {}", queryBuilder, params);
                 result = Collections.emptyList();

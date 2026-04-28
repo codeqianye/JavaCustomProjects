@@ -25,41 +25,50 @@ public class AbConfig {
 
             // ── Processor 1：精确名称召回 ─────────────────────────────
             // 同一个 DishRecallProcessor 类，params 不同，行为不同
-            new ProcessorConfig("DishRecallProcessor", params(
+            /*new ProcessorConfig("DishRecallProcessor", params(
                 "toggle",       "1",            // 启用
                 "absid",        "dish_exact",   // 追踪标识
                 "queryBuilder", "exactName",    // 选 ExactNameQueryBuilder
                 "recallType",   "exact",        // 写入 Context 的 key
                 "size",         "5"             // 最多返回 5 条
-            )),
+            )),*/
 
             // ── Processor 2：模糊关键词召回（兜底） ────────────────────
             // 还是同一个 DishRecallProcessor 类，params 换了，变成模糊召回
-            new ProcessorConfig("DishRecallProcessor", params(
+            /*new ProcessorConfig("DishRecallProcessor", params(
                 "toggle",       "1",
                 "absid",        "dish_fuzzy",
                 "queryBuilder", "fuzzy",        // 选 FuzzyQueryBuilder
                 "recallType",   "fuzzy",
                 "size",         "10"
-            )),
+            )),*/
+            // ★ 练习1：把下面这段注释去掉，加入分类召回，重启测试
+//            new ProcessorConfig("DishRecallProcessor", params(
+//                    "toggle",       "1",
+//                    "absid",        "dish_category",
+//                    "queryBuilder", "byCategory",
+//                    "recallType",   "category",
+//                    "size",         "8"
+//            )),
 
+            // ★ 练习2：给精确召回加价格过滤，只返回 40 元以内的菜
+            // 修改 Processor 1 的 params，加上："maxPrice", "40"
+
+            // 练习4(20~30)
+            new ProcessorConfig("DishRecallProcessor", params(
+                    "toggle",       "1",
+                    "absid",        "dish_price",
+                    "minPrice",     "20",
+                    "maxPrice",     "30",
+                    "queryBuilder", "byPriceRange",
+                    "recallType",   "byPriceRange",
+                    "size",         "10"
+            )),
             // ── Processor 3：汇总排序 ───────────────────────────────
             new ProcessorConfig("DishSortProcessor", params(
                 "toggle", "1",
                 "absid",  "dish_sort"
             ))
-
-            // ★ 练习1：把下面这段注释去掉，加入分类召回，重启测试
-            // new ProcessorConfig("DishRecallProcessor", params(
-            //     "toggle",       "1",
-            //     "absid",        "dish_category",
-            //     "queryBuilder", "byCategory",
-            //     "recallType",   "category",
-            //     "size",         "8"
-            // ))
-
-            // ★ 练习2：给精确召回加价格过滤，只返回 40 元以内的菜
-            // 修改 Processor 1 的 params，加上："maxPrice", "40"
         );
     }
 

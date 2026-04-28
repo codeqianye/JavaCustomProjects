@@ -5,7 +5,9 @@ import com.feng.abmenu.pojo.SearchContext;
 import com.feng.abmenu.process.AbstractDishProcessor;
 import com.feng.abmenu.process.DishRecallProcessor;
 import com.feng.abmenu.process.DishSortProcessor;
+import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -28,7 +30,7 @@ public class ProcessorRunner {
 
 
     /**
-     * rocessorRunner 用的是构造器注入，没有 @Autowired 但 Spring 会自动识别
+     * processorRunner 用的是构造器注入，没有 @Autowired 但 Spring 会自动识别
      * Spring 启动时扫描到 @Component 的,ProcessorRunner，
      * 发现它只有一个构造器，就自动用这个构造器注入所有参数。List<ProcessorConfig> 来自 AbConfig.java 里的 @Bean
      * @param dishRecallProcessor
