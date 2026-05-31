@@ -1,6 +1,6 @@
 package constructor_param02;
 
-import create_destory_object01.constructor_param02.Cat;
+import ef01_create_destory_object.c02_constructor_param.Cat;
 import org.junit.Test;
 
 public class Test1 {

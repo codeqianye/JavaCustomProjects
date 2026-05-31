@@ -1,4 +1,4 @@
-package create_destory_object01.constructor_param02;
+package ef01_create_destory_object.c02_constructor_param;
 
 import lombok.Getter;
 
